@@ -1,0 +1,9 @@
+<h1>new Form_1</h1>
+
+
+<%= form_for('', method: 'get') do |f| %>
+  Sahil's name: <%= f.text_field :first_name %><br />
+  Last name : <%= f.text_field :last_name %><br />
+  Biography : <%= f.text_field :email %><br />
+  <%= f.submit %>
+<% end %>

@@ -1,0 +1,49 @@
+
+
+<div class="container-fluid">
+  <div class="table-responsive-md">
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr scope="col">
+          <th>URL</th>
+          <th>Request</th>
+          <th>Response</th>
+          <th>HTTP Method</th>
+          <th>Created(IST)</th>
+          <th>Updated(IST)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%# <%= render partial: 'admin/api_call_log/table/row', collection: @api_logs, as: :log %> 
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+
+<%= form_for :user do |f| %>
+  First name: <%= f.text_field :first_name %><br />
+  Last name : <%= f.text_field :last_name %><br />
+  Biography : <%= f.text_area :biography %><br />
+  Admin?    : <%= f.check_box :admin %><br />
+  <%= f.submit %>
+<% end %>
+
+
+
+
+<%# <table>
+    <thead>
+      <th>Name</th>
+      <th>Email</th>
+    </thead>
+    <tbody>
+     
+        <tr>
+          <td>name</td>
+          <td>email</td>
+        </tr>
+    
+    </tbody>
+  </table> %>

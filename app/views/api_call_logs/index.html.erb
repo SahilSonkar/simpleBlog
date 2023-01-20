@@ -1,0 +1,42 @@
+<div>
+  <%= paginate @api_logs%>  
+</div>
+<div class="box box-sm box-display">
+  <%= form_for( '', method: "get") do |f| %>
+      <div class="box-body">
+        <div class="row">
+          <div class="form-group col-xs-2 col-md-2 m-t-2">
+            <%= f.label :Method %>
+            <%= f.select :http_method , Setting[:api_call_log_dashboard_filters]['http_method'], prompt: 'Select method',selected: params[:http_method] %>
+          </div>
+          <div class="form-group col-xs-2 col-md-2 m-t-2">
+            <%= f.submit "Filter", class: "btn btn-primary" %>
+          </div>
+        </div>
+      </div>
+  <% end %>
+</div>
+
+<div class="container-fluid">
+  <div class="table-responsive-md">
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr scope="col">
+          <th>URL</th>
+          <th>Request</th>
+          <th>Response</th>
+          <th>HTTP Method</th>
+          <th>Created</th>
+          <th>Updated</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render partial: 'admin/api_call_log/table/row', collection: @api_logs, as: :log %>
+      </tbody>
+    </table>
+  </div>
+</div>
+<br>
+<div>
+  <%= paginate @api_logs %>
+</div>

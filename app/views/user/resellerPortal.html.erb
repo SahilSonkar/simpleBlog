@@ -1,0 +1,22 @@
+
+
+<div class="container-fluid">
+  <div class="table-responsive-md">
+    <table class="table esb-table table-bordered table-striped">
+
+      <thead>
+      <tr scope="col">
+        <th>first_name</th>
+        <th>last_name</th>
+        <th>email</th>
+        <th>created_at</th>
+        <th>updated_at</th>
+      
+      </tr>
+      </thead>
+      <tbody>
+        <%= render partial: 'user/table/row', collection: @users, as: :user %>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,42 @@
+<tr scope="row" class="">
+	<td><%= log.url%></td>
+  <td>
+    <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#requestmodal_<%=log.id%>">Request</button>
+    <div class="modal fade" id="requestmodal_<%=log.id%>" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-dashboard" role="document">
+        <div class="modal-content modal-content-dashboard">
+          <button type="button" class="btn btn-info btn-sm" data-dismiss="modal">Close</button>
+          <div class="modal-body">
+            <h3>Request</h3>
+            <pre class="prettyprint">
+              <% if log.request?%>
+                <%= { request: log.request, headers: log.headers } %>
+              <% end%>
+            </pre>
+          </div>
+        </div>
+      </div>
+    </div>  
+	</td>
+  <td>
+    <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#responsemodal_<%=log.id%>">Response</button>
+    <div class="modal fade" id="responsemodal_<%=log.id%>" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-dashboard" role="document">
+        <div class="modal-content modal-content-dashboard">
+          <button type="button" class="btn btn-info btn-sm" data-dismiss="modal">Close</button>
+          <div class="modal-body">
+            <h3>Response</h3>
+            <pre class="prettyprint">
+              <% if log.response?%>
+                <%= (log.response)  %>
+              <% end%>
+            </pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </td>
+  <td><%= log.http_method %></td>
+  <td><%= log.created_at.getlocal.strftime("%d.%m.%Y %I:%M:%S %p")%></td>
+  <td><%= log.updated_at.getlocal.strftime("%d.%m.%Y %I:%M:%S %p")%></td>
+</tr>
