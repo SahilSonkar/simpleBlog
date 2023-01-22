@@ -5,9 +5,6 @@ class GalleryController < ApplicationController
     end
     def sahil
         @log = [url: "asdfgh" , request: ]
-        Rails.logger.info "SHOW METHOD WAS CALLED!......................."
-
-       
     end
     
 end
